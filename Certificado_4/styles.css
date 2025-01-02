@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light-gray: #e0e0e0;
+  --soft-green: #7bbf7b;
+  --dark-gray: #333333;
+  --light-blue: #7ec8ff;
+}
+
+body {
+  background-color: var(--dark-gray);
+  color: var(--light-gray);
+  font-family: "Arial", sans-serif;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 15px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 30px 0;
+  text-align: center;
+  color: var(--soft-green);
+}
+
+#change-due {
+  text-align: left;
+  font-size: 1.5rem;
+  color: var(--light-blue);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 15px 0 25px;
+}
+
+label {
+  font-size: 20px;
+  color: var(--light-blue);
+}
+
+.user-input {
+  height: 35px;
+  padding: 12px;
+  margin: 12px;
+  font-size: 16px;
+  border: 2px solid var(--light-blue);
+  border-radius: 8px;
+}
+
+.price-screen {
+  border: 8px solid var(--soft-green);
+  background-color: #1c1c1c;
+  height: 60px;
+  width: 220px;
+  margin-left: -40px;
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+#price {
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.connector {
+  margin-left: -18px;
+  background-color: var(--soft-green);
+  height: 35px;
+  width: 50px;
+  border-radius: 5px;
+}
+
+.top-register {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 25px 25px 0 0;
+  padding-top: 25px;
+  background-color: var(--light-blue);
+  height: 280px;
+  width: 350px;
+}
+
+.btns-container {
+  width: 30%;
+}
+
+.btn {
+  border-radius: 50%;
+  border: none;
+  width: 25px;
+  height: 25px;
+  background-color: var(--dark-gray);
+}
+
+.check-btn-styles {
+  cursor: pointer;
+  width: 120px;
+  height: 35px;
+  margin: 12px;
+  color: var(--dark-gray);
+  font-size: 20px;
+  font-weight: bold;
+  background-color: var(--soft-green);
+  background-image: linear-gradient(#a4d79c, #7bbf7b);
+  border-color: var(--soft-green);
+  border-width: 3px;
+  border-radius: 8px;
+}
+
+.cash-drawer-display {
+  font-size: 1.2rem;
+  background-color: #ffffff;
+  width: 60%;
+  height: 98%;
+  color: var(--dark-gray);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.bottom-register {
+  background-color: var(--light-blue);
+  height: 60px;
+  width: 350px;
+  margin-top: 15px;
+  border-radius: 0 0 25px 25px;
+}
+
+.circle {
+  margin: 18px auto;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: var(--dark-gray);
+}
