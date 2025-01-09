@@ -24,10 +24,9 @@ const convertToRoman = (num) => {
 
   let result = "";
   for (const [symbol, value] of ref) {
-    while (num >= value) {
-      result += symbol;
-      num -= value;
-    }
+    const count = Math.floor(num / value);
+    result += symbol.repeat(count);
+    num -= value * count;
   }
   return result;
 };
