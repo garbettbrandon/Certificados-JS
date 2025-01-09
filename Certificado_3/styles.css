@@ -5,58 +5,61 @@
 }
 
 :root {
-  --phone-colors: #e0e0e5; /* Gris más claro */
+  --phone-colors: #e0e0e5; /* Light gray */
   --center-text: center;
   --gray-00: #fff;
-  --button-color: #3498db; /* Azul moderno */
-  --button-hover: #2980b9; /* Azul oscuro */
-  --font-family: "Segoe UI", Tahoma, Geneva, sans-serif; /* Fuente moderna */
+  --button-color: #3498db; /* Modern blue */
+  --button-hover: #2980b9; /* Dark blue */
+  --font-family: "Segoe UI", Tahoma, Geneva, sans-serif; /* Modern font */
 }
 
 body {
-  background-color: #2c3e50; /* Fondo oscuro más suave */
+  background-color: #2c3e50; /* Softer dark background */
   font-family: var(--font-family);
-  color: #ecf0f1; /* Texto más claro */
+  color: #ecf0f1; /* Lighter text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 main {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  padding: 50px 20px; /* Aumentar padding para más espacio */
+  padding: 20px;
 }
 
 h1 {
   color: white;
-  width: 100%;
-  max-width: 480px;
-  margin: 15px 0;
   text-align: var(--center-text);
-  font-size: 2rem; /* Fuente más grande y moderna */
+  font-size: 2rem; /* Larger, modern font */
+  margin-bottom: 20px;
 }
 
 .phone-container {
-  position: relative;
   background-color: var(--phone-colors);
-  width: 280px; /* Aumento del tamaño */
-  height: 500px; /* Aumento del tamaño */
-  margin: 40px auto;
-  border-radius: 25px; /* Bordes más redondeados */
-  /* border: none; Eliminación del borde negro */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  width: 320px; /* Phone width */
+  height: 640px; /* Phone height */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+  position: relative;
 }
 
-.phone-background {
-  background-color: #1a222b; /* Gris oscuro */
+/* .phone-background {
+  background-color: #1a222b;
   width: 100%;
-  height: 25px;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  height: 50px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .phone-camera {
@@ -64,11 +67,10 @@ h1 {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  margin: 10px auto 0;
-}
+} */
 
 label {
-  margin: 10px auto 5px;
+  margin: 20px 0 10px;
   color: #000000;
 }
 
@@ -76,46 +78,44 @@ label {
   display: block;
   margin: 10px auto;
   padding: 12px;
-  border: 2px solid #3498db; /* Borde azul más elegante */
+  border: 2px solid #3498db; /* More elegant blue border */
   border-radius: 10px;
   text-align: var(--center-text);
-  width: 90%;
+  width: 100%;
   height: 50px;
   font-size: 16px;
-  background-color: #ecf0f1; /* Fondo claro */
+  background-color: #ecf0f1; /* Light background */
 }
 
 #user-input:focus {
   outline: none;
-  border-color: #2980b9; /* Azul oscuro cuando se enfoca */
+  border-color: #2980b9; /* Dark blue on focus */
 }
 
 .phone-footer {
   background-color: #1e2225;
   width: 100%;
-  height: 50px; /* Aumento de altura */
+  height: 80px; /* Increased height */
   position: absolute;
   bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  /* padding: 10px; */
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .btn-styles {
   cursor: pointer;
-  width: 100px; /* Botón más grande */
+  width: 100px; /* Larger button */
   margin: 15px;
-  /* padding: 10px; */
   color: white;
   font-size: 18px;
   background-color: var(--button-color);
   background-image: linear-gradient(var(--button-color), #2980b9);
   border: none;
   padding: 12px;
-  border-radius: 20px; /* Bordes más suaves */
+  border-radius: 20px; /* Softer corners */
   transition: background-color 0.3s ease;
 }
 
@@ -125,8 +125,12 @@ label {
 
 #results-div {
   overflow-y: auto;
-  height: 265px;
+  height: 70px;
   width: 100%;
+  /* margin-top: 0px; */
+  background-color: #ecf0f1;
+  border-radius: 10px;
+  /* padding: 0px; */
 }
 
 .results-text {
@@ -134,5 +138,33 @@ label {
   padding: 5px;
   text-align: var(--center-text);
   margin: 10px 0;
-  color: #ecf0f1;
+  color: #000000;
+}
+
+.numeric-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.key {
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.key:hover {
+  background-color: var(--button-hover);
+}
+
+/* Make the zero key span all three columns */
+.key-zero {
+  grid-column: span 3;
 }

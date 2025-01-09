@@ -3,6 +3,7 @@ const checkBtn = document.getElementById("check-btn");
 const clearBtn = document.getElementById("clear-btn");
 const resultsDiv = document.getElementById("results-div");
 
+// Function to validate the phone number
 const checkValidNumber = (input) => {
   if (input === "") {
     alert("Please provide a phone number");
@@ -29,11 +30,23 @@ const checkValidNumber = (input) => {
   resultsDiv.appendChild(pTag);
 };
 
+// Function to handle numeric keypad input
+const addToInput = (value) => {
+  userInput.value += value;
+};
+
+// Event listeners for buttons
 checkBtn.addEventListener("click", () => {
   checkValidNumber(userInput.value);
   userInput.value = "";
 });
 
+clearBtn.addEventListener("click", () => {
+  resultsDiv.textContent = "";
+  userInput.value = "";
+});
+
+// Event listener for Enter key
 userInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     checkValidNumber(userInput.value);
@@ -41,6 +54,10 @@ userInput.addEventListener("keydown", (e) => {
   }
 });
 
-clearBtn.addEventListener("click", () => {
-  resultsDiv.textContent = "";
+// Numeric keypad functionality
+const keypadButtons = document.querySelectorAll(".key");
+keypadButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    addToInput(button.textContent);
+  });
 });
