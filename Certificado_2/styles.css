@@ -106,3 +106,32 @@ button:hover {
   border: 1px solid #f5c6cb;
   border-radius: 5px;
 }
+
+.saved-conversions {
+  margin-top: 20px;
+}
+
+.saved-conversions div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.saved-conversions button {
+  background: #dc3545;
+  color: #ffffff;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.saved-conversions button:hover {
+  background: #c82333;
+}

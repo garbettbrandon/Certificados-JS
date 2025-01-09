@@ -2,6 +2,7 @@
 const form = document.getElementById("form");
 const convertButton = document.getElementById("convert-btn");
 const output = document.getElementById("output");
+const savedConversionsContainer = document.getElementById("saved-conversions");
 
 // Función para convertir números arábigos a romanos
 const convertToRoman = (num) => {
@@ -49,23 +50,55 @@ const validateInput = (str, num) => {
 const handleConversion = () => {
   const numStr = document.getElementById("number").value;
   const num = parseInt(numStr, 10);
-
-  // Limpia el mensaje previo
-  output.classList.remove("alert", "hidden");
-  output.innerText = "";
-
-  // Validación
-  const errorMessage = validateInput(numStr, num);
-  if (errorMessage) {
-    output.innerText = errorMessage; // Muestra el mensaje de error
+  const error = validateInput(numStr, num);
+  if (error) {
+    output.textContent = error;
+    output.classList.remove("hidden");
     output.classList.add("alert");
     return;
   }
-
-  // Conversión y salida
-  const romanNumeral = convertToRoman(num);
-  output.innerText = romanNumeral;
+  const roman = convertToRoman(num);
+  output.textContent = `${num} = ${roman}`;
+  output.classList.remove("hidden");
+  output.classList.remove("alert");
+  saveConversion(num, roman);
 };
+
+// Función para guardar la conversión en localStorage
+const saveConversion = (num, roman) => {
+  const conversions = JSON.parse(localStorage.getItem("conversions")) || [];
+  conversions.push({ num, roman });
+  localStorage.setItem("conversions", JSON.stringify(conversions));
+  displaySavedConversions();
+};
+
+// Función para mostrar las conversiones guardadas
+const displaySavedConversions = () => {
+  const conversions = JSON.parse(localStorage.getItem("conversions")) || [];
+  savedConversionsContainer.innerHTML = "";
+  conversions.forEach((conversion, index) => {
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <span>${conversion.num} = ${conversion.roman}</span>
+      <button onclick="deleteConversion(${index})">Delete</button>
+    `;
+    savedConversionsContainer.appendChild(div);
+  });
+};
+
+// Función para eliminar una conversión específica
+const deleteConversion = (index) => {
+  const conversions = JSON.parse(localStorage.getItem("conversions")) || [];
+  conversions.splice(index, 1);
+  localStorage.setItem("conversions", JSON.stringify(conversions));
+  displaySavedConversions();
+};
+
+// Event listener para el botón de conversión
+convertButton.addEventListener("click", handleConversion);
+
+// Mostrar las conversiones guardadas al cargar la página
+document.addEventListener("DOMContentLoaded", displaySavedConversions);
 
 // Eventos
 form.addEventListener("submit", (e) => {
