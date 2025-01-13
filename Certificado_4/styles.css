@@ -14,7 +14,7 @@
 body {
   background-color: var(--dark-gray);
   color: var(--light-gray);
-  font-family: "Arial", sans-serif;
+  font-family: monospace;
 }
 
 main {
@@ -30,13 +30,13 @@ h1 {
   font-size: 3rem;
   margin: 30px 0;
   text-align: center;
-  color: var(--soft-green);
+  color: var(--light-gray);
 }
 
 #change-due {
   text-align: left;
   font-size: 1.5rem;
-  color: var(--light-blue);
+  color: var(--light-blue)
 }
 
 .container {
@@ -70,54 +70,46 @@ label {
 }
 
 .price-screen {
-  border: 8px solid var(--soft-green);
-  background-color: #1c1c1c;
+  border: 5px solid var(--light-gray);
+  background-color: #b3b3b3;
   height: 60px;
   width: 220px;
-  margin-left: -40px;
-  color: white;
+  color: rgb(65, 65, 65);
   font-size: 1.4rem;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-}
-
-#price {
-  font-size: 1.7rem;
-  text-align: center;
-}
-
-.connector {
-  margin-left: -18px;
-  background-color: var(--soft-green);
-  height: 35px;
-  width: 50px;
   border-radius: 5px;
 }
 
 .top-register {
   display: flex;
   justify-content: space-around;
-  border-radius: 25px 25px 0 0;
+  border-radius: 5px 5px 0 0;
   padding-top: 25px;
-  background-color: var(--light-blue);
-  height: 280px;
-  width: 350px;
+  background-color: var(--soft-green);
+  height: auto;
+  width: 500px;
 }
 
 .btns-container {
-  width: 30%;
+  width: 40%;
+  display:block;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn {
-  border-radius: 50%;
-  border: none;
-  width: 25px;
-  height: 25px;
+  border-radius: 5%;
+  width: 50px;
+  height: 50px;
   background-color: var(--dark-gray);
+  color: var(--light-gray);
+  font-size: 1rem;
+  margin: 5px;
+  cursor: pointer;
 }
 
 .check-btn-styles {
@@ -132,25 +124,27 @@ label {
   background-image: linear-gradient(#a4d79c, #7bbf7b);
   border-color: var(--soft-green);
   border-width: 3px;
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 .cash-drawer-display {
   font-size: 1.2rem;
-  background-color: #ffffff;
-  width: 60%;
-  height: 98%;
+  background-color: #adadad;
+  width: 50%;
+  height: auto;
   color: var(--dark-gray);
   padding: 15px;
-  border-radius: 10px;
+  border: 2px solid var(--dark-gray);
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .bottom-register {
-  background-color: var(--light-blue);
+  background-color: var(--soft-green);
   height: 60px;
-  width: 350px;
+  width: 500px;
   margin-top: 15px;
-  border-radius: 0 0 25px 25px;
+  border-radius: 0 0 5px 5px;
 }
 
 .circle {
