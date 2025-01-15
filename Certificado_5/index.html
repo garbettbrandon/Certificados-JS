@@ -10,11 +10,6 @@
   <body>
     <main>
       <div class="container">
-        <form role="search" id="search-form">
-          <label for="search-input">Search for Pokémon Name or ID:</label>
-          <input type="text" name="pokemon" id="search-input" required />
-          <button id="search-button">Search</button>
-        </form>
         <div class="output">
           <div class="top-container">
             <div class="name-and-id">
@@ -28,6 +23,13 @@
             <div id="sprite-container" class="sprite-container"></div>
             <div id="types"></div>
           </div>
+          <form role="search" id="search-form">
+            <!-- <label for="search-input">Search for Pokémon Name or ID:</label> -->
+            <input type="text" name="pokemon" id="search-input" required />
+            <button id="back-button" class="btn-nav"><<</button>
+            <button id="search-button">Search</button>
+            <button id="forward-button" class="btn-nav">>></button>
+          </form>
           <div class="bottom-container">
             <table>
               <tr>
